@@ -13,17 +13,18 @@ Cloning Youtube with Vanilla and NodeJS
 2. Handling Routes with Express
 
    - 웹에는 get, post 두가지 요청 방식
-     : get = 단순히 정보를 보여줌
-     : post = 정보를 전달해줌
+     - get = 단순히 정보를 보여줌
+     - post = 정보를 전달해줌
    - 요청시 request, response 두가지의 파라메터가 있다.
-     : request = 웹에서의 전달하는 정보가 들어있다.
-     : response = 웹에서의 요청을 대답한다.
+     - request = 웹에서의 전달하는 정보가 들어있다.
+     - response = 웹에서의 요청을 대답한다.
 
 3. ES6 on NodeJS using Babel
 
    - Babel
-     : 최신 문법의 Javascript 코드를 구 문법의 코드로 변환시켜주는것
-     : 아마도 최신 문법의 코드를 이해하지 못하는 브라우저가 있기에 추가 해주는듯
+
+     - 최신 문법의 Javascript 코드를 구 문법의 코드로 변환시켜주는것
+     - 아마도 최신 문법의 코드를 이해하지 못하는 브라우저가 있기에 추가 해주는듯
 
      1. @babel/preset-env 설치
         - npm install @babel/preset-env
@@ -35,14 +36,16 @@ Cloning Youtube with Vanilla and NodeJS
      4. .babelrc 파일 생성
 
    - nodemon
-     : 코드의 변경을 감지하여 서버를 재 시작해준다
-     : 현재 프로젝트에 필요한 package 라면 npm 옵션을 입력하지 않아도 된다. => npm install [package]
-     : 현재 프로젝트가 아닌 범용적으로 필요한 package 라면 -D 옵션을 추가한다. => npm install [package] -D
+
+     - 코드의 변경을 감지하여 서버를 재 시작해준다
+     - 현재 프로젝트에 필요한 package 라면 npm 옵션을 입력하지 않아도 된다. => npm install [package]
+     - 현재 프로젝트가 아닌 범용적으로 필요한 package 라면 -D 옵션을 추가한다. => npm install [package] -D
 
      1. nodemon 설치
      2. package.json script 수정 nodemon 추가 (babel-node => nodemon --exec babel-node)
 
 4. Express Core: Middlewares
+
    - 웹의 요청이 발생할 때 응답을 하기전에 지정한 로직을 수행할 수 있게 해주는것
    - IP 검사, Logging, 권한 체크 등을 수행하여 block 을 하던가 다른 곳으로 보내버리는 것이 가능
    - 전역적인 미들웨어가 있고, 원하는 요청시에만 부여해주는 미들웨어가 있다.
@@ -50,3 +53,21 @@ Cloning Youtube with Vanilla and NodeJS
      2. 라우터의 응답 앞에 위치하면, 해당 요청에만 사용 가능하다.
    - 미들웨어는 정해진 수가 없다.
    - 미들웨어에서 next() 를 하지 않으면 다음 미들웨어나 응답으로 넘어가지 않는다.
+
+   1. morgan
+
+      - url 요청에 대한 logger 를 위한 package
+      - logger 를 남기기 위한 옵션이 존재 (common, tiny, dev, short ... 등)
+
+   2. helmet
+
+      - express 보안을 위한 package
+
+   3. cookie-parser
+
+      - cookie 를 저장하기 위한 package
+
+   4. body-parser
+
+      - form data 를 받기위한 package
+      - data 를 받기 위한 format 을 설정할 수있다.(json, text, raw, urlencoded)
