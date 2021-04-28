@@ -93,5 +93,10 @@ Cloning Youtube with Vanilla and NodeJS
    - express 에서 템플릿 언어를 사용하려면 application 에서 view engine 을 설정 해주어야 한다.
    - express 에서 템플릿의 기본 위치를 지정할 수 있다. 기본값은 (/views)
    - pug 에서 child element 는 들여쓰기로 구분한다. 같은 라인에 있으면 형제관계 (마치 파이썬처럼)
-   - extends 명령어로 다른 pug 파일을 참조 할 수도 있다.
+   - extends 명령어로 다른 pug 파일을 참조 할 수 있다.
    - block [변수명] 으로 다른 pug 파일에서 [변수명] 을 선언할 수 있다.
+   - #{ [Javascript] } 방식으로 Javascript 를 수행 할 수있다.
+   - include 명령어로 다른 pug 파일을 가져올 수 있다. 보통 컨텐츠가 변경되지 않는 영역에 사용되는 듯하다.
+   - pug 에서 HTML 을 작성할 때에는 emmet 문법의 태그 간소화 방법 등과 비슷하다.
+     - [태그].[class명]
+     - attribute 값은 () 로 처리한다. [태그](href="#") 태그와 () 사이의 공백도 인식을 하는 것으로 파악. 따라서 띄어쓰기를 하면 정상 작동을 하지 않는다.
