@@ -12,6 +12,9 @@ import globalRouter from "./routers/globalRouter";
 
 const app = express();
 
+/* Express Template */
+app.set("view engine", "pug");
+
 /* Middleware */
 app.use(cookieParser());
 app.use(bodyParser.json());

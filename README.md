@@ -80,6 +80,15 @@ Cloning Youtube with Vanilla and NodeJS
    - url 의 대메뉴 별로 파일을 관리하는게 효과적.
 
 6. MVC Pattern
+
    - M(model) => Data, Database
    - V(view) => html,css
    - C(controller) => router, controller
+
+7. Pug
+
+   - 템플릿 언어
+   - Html 을 조금 세련되게 사용할 수 있게 해준다.
+   - \<span\>Hello\<\/span\> ==> span Hello
+   - express 에서 템플릿 언어를 사용하려면 application 에서 view engine 을 설정 해주어야 한다.
+   - express 에서 템플릿의 기본 위치를 지정할 수 있다. 기본값은 (/views)
