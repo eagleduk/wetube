@@ -92,3 +92,6 @@ Cloning Youtube with Vanilla and NodeJS
    - \<span\>Hello\<\/span\> ==> span Hello
    - express 에서 템플릿 언어를 사용하려면 application 에서 view engine 을 설정 해주어야 한다.
    - express 에서 템플릿의 기본 위치를 지정할 수 있다. 기본값은 (/views)
+   - pug 에서 child element 는 들여쓰기로 구분한다. 같은 라인에 있으면 형제관계 (마치 파이썬처럼)
+   - extends 명령어로 다른 pug 파일을 참조 할 수도 있다.
+   - block [변수명] 으로 다른 pug 파일에서 [변수명] 을 선언할 수 있다.
