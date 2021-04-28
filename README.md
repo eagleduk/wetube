@@ -9,6 +9,7 @@ Cloning Youtube with Vanilla and NodeJS
    - npm 초기화
    - express 모듈 설치
    - git repository 연결
+   - .gitignore 작성 => github 에서 제공하는 nodejs 의 기본 포멧 사용
 
 2. Handling Routes with Express
 
@@ -71,3 +72,8 @@ Cloning Youtube with Vanilla and NodeJS
 
       - form data 를 받기위한 package
       - data 를 받기 위한 format 을 설정할 수있다.(json, text, raw, urlencoded)
+
+5. Express Core: Routing
+   - 제공하는 웹의 router 주소 매핑이 파일 하나에 모두 적혀있으면 구별하기가 어렵다.
+   - 따라서 es6 의 import / export 를 사용하여 router, application, server 모듈을 나누어 관리한다.
+   - url 의 대메뉴 별로 파일을 관리하는게 효과적.
