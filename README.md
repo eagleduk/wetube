@@ -80,4 +80,6 @@ Cloning Youtube with Vanilla and NodeJS
    - url 의 대메뉴 별로 파일을 관리하는게 효과적.
 
 6. MVC Pattern
-   - M(model) V(view) C(controller)
+   - M(model) => Data, Database
+   - V(view) => html,css
+   - C(controller) => router, controller
