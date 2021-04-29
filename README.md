@@ -2,6 +2,19 @@
 
 Cloning Youtube with Vanilla and NodeJS
 
+# Pages:
+
+- [ ] Home
+- [ ] Join
+- [ ] Login
+- [x] Search
+- [ ] User Detail
+- [ ] Edit Profile
+- [ ] Change Password
+- [ ] Upload
+- [ ] Video Detail
+- [ ] Edit Video
+
 # curriculum
 
 1. Your First Express Server
@@ -103,6 +116,7 @@ Cloning Youtube with Vanilla and NodeJS
       - pug 에서 HTML 을 작성할 때에는 emmet 문법의 태그 간소화 방법 등과 비슷하다.
         - [태그].[class명]
         - attribute 값은 () 로 처리한다. [태그]\(href="#") 태그와 () 사이의 공백도 인식을 하는 것으로 파악. 따라서 띄어쓰기를 하면 정상 작동을 하지 않는다.
+      - 태그가 아닌 텍스트로 라인을 시작해야 할때, |(파이프) 를 사용하면 된다.
 
    1. 변수
       1. 전역 변수
