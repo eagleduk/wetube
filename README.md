@@ -134,3 +134,6 @@ Cloning Youtube with Vanilla and NodeJS
 
 1. Controller (MV`C`)
    - form get 방식으로 값을 전달하면, request.query 에 object 형태로 전달이 된다.
+   - post / get 방식에 따라 router 를 구분지어야 한다.
+   - body-parser 가 없으면, form 의 정보를 얻을수 가 없다.
+   - http 의 response status code 로 브라우저에 상태를 전달 할 수있다. (상태 코드에 따라 브라우저가 자동 저장할지 여부를 보여준다.)
