@@ -9,11 +9,11 @@ Cloning Youtube with Vanilla and NodeJS
 - [x] Login
 - [x] Search
 - [ ] User Detail
-- [ ] Edit Profile
-- [ ] Change Password
-- [ ] Upload
+- [x] Edit Profile
+- [x] Change Password
+- [x] Upload
 - [ ] Video Detail
-- [ ] Edit Video
+- [x] Edit Video
 
 # curriculum
 
@@ -117,6 +117,7 @@ Cloning Youtube with Vanilla and NodeJS
         - [태그].[class명]
         - attribute 값은 () 로 처리한다. [태그]\(href="#") 태그와 () 사이의 공백도 인식을 하는 것으로 파악. 따라서 띄어쓰기를 하면 정상 작동을 하지 않는다.
       - 태그가 아닌 텍스트로 라인을 시작해야 할때, |(파이프) 를 사용하면 된다.
+      - 반복문을 사용할 때, each [iterator] in [변수] 형식으로 사용한다.
 
    1. 변수
       1. 전역 변수
