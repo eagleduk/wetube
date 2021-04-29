@@ -123,6 +123,8 @@ Cloning Youtube with Vanilla and NodeJS
         - Javascript 의 함수와 비슷
         - mixin [함수명]\(파라메터)
         - 사용할 때에는 +[함수명]\(파라메터) 로 사용
+      - 조건문(if) 를 사용할 때, 조건식에 () 생략. if [조건] else
+      - Javascript 가 아닌 일반적으로 변수를 사용할때, [태그]= [변수명] 으로도 사용이 가능하다.
 
    1. 변수
       1. 전역 변수
