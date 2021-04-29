@@ -26,6 +26,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(localMiddleware);
 
+app.use(function (req, res, next) {
+  res.setHeader(
+    "Content-Security-Policy",
+    "script-src 'self' https://archive.org"
+  );
+  return next();
+});
+
 /* Router */
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
