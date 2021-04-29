@@ -142,6 +142,11 @@ Cloning Youtube with Vanilla and NodeJS
    - http 의 response status code 로 브라우저에 상태를 전달 할 수있다. (상태 코드에 따라 브라우저가 자동 저장할지 여부를 보여준다.)
 
 1. MongoDB (`M`VC)
+
    - NO SQL Database
    - nodeJS 에서 사용하려면 mongoose 설치 필요
    - .msi 파일로 설치, 환경변수 설정
+
+1. dotenv
+   - 소스코드 공유시, 공유하기에 위험한 항목(URL, PORT, Application Key 등을 관리)
+   - dotenv import 이 후, dotenv.config() 로 .env 파일을 읽고 process.env.[변수명] 으로 호출가능하다.
