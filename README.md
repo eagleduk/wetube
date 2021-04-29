@@ -89,7 +89,7 @@ Cloning Youtube with Vanilla and NodeJS
 
    - 템플릿 언어
    - Html 을 조금 세련되게 사용할 수 있게 해준다.
-   - \<span\>Hello\<\/span\> ==> span Hello
+   - \<span>Hello\</span> ==> span Hello
    - express 에서 템플릿 언어를 사용하려면 application 에서 view engine 을 설정 해주어야 한다.
    - express 에서 템플릿의 기본 위치를 지정할 수 있다. 기본값은 (/views)
    - pug 에서 child element 는 들여쓰기로 구분한다. 같은 라인에 있으면 형제관계 (마치 파이썬처럼)
@@ -99,4 +99,7 @@ Cloning Youtube with Vanilla and NodeJS
    - include 명령어로 다른 pug 파일을 가져올 수 있다. 보통 컨텐츠가 변경되지 않는 영역에 사용되는 듯하다.
    - pug 에서 HTML 을 작성할 때에는 emmet 문법의 태그 간소화 방법 등과 비슷하다.
      - [태그].[class명]
-     - attribute 값은 () 로 처리한다. [태그](href="#") 태그와 () 사이의 공백도 인식을 하는 것으로 파악. 따라서 띄어쓰기를 하면 정상 작동을 하지 않는다.
+     - attribute 값은 () 로 처리한다. [태그]\(href="#") 태그와 () 사이의 공백도 인식을 하는 것으로 파악. 따라서 띄어쓰기를 하면 정상 작동을 하지 않는다.
+   - pug(template) 에서 변수를 전달하는 방법은 express 미들웨어에서 변수를 저장하여 전달할 수 있다.
+     - res.locals.[변수명] 식으로 모든 라우터에서 사용할 수 있는 변수를 지정할 수 있다.
+     - pug 에서 변수를 사용하기 위해서는 content 부분에서는 #{} 문법을, 태그의 속성 부분에서는 별다른 문법은 없는듯 하다. => [태그]\(속성명=[변수명]) #{[변수명]}
