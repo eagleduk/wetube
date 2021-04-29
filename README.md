@@ -111,3 +111,6 @@ Cloning Youtube with Vanilla and NodeJS
       1. render 변수
          - router 에서 결과를 render 할때, object 형태로 변수를 전달할 수 있다.
          - 변수가 텍스트에만 활용될 경우, [태그]=[변수명] 으로도 사용이 가능하다.
+
+1. Controller (MV`C`)
+   - form get 방식으로 값을 전달하면, request.query 에 object 형태로 전달이 된다.
