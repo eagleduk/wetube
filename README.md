@@ -135,7 +135,13 @@ Cloning Youtube with Vanilla and NodeJS
          - 변수가 텍스트에만 활용될 경우, [태그]=[변수명] 으로도 사용이 가능하다.
 
 1. Controller (MV`C`)
+
    - form get 방식으로 값을 전달하면, request.query 에 object 형태로 전달이 된다.
    - post / get 방식에 따라 router 를 구분지어야 한다.
    - body-parser 가 없으면, form 의 정보를 얻을수 가 없다.
    - http 의 response status code 로 브라우저에 상태를 전달 할 수있다. (상태 코드에 따라 브라우저가 자동 저장할지 여부를 보여준다.)
+
+1. MongoDB (`M`VC)
+   - NO SQL Database
+   - nodeJS 에서 사용하려면 mongoose 설치 필요
+   - .msi 파일로 설치, 환경변수 설정
