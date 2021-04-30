@@ -173,7 +173,11 @@ Cloning Youtube with Vanilla and NodeJS
    - try ~ catch 생활화 필요
 
 1. multer
+
    - file 을 upload 할때 사용된다.
    - 미들웨어에서 파일을 체크하고 저장하고 정보를 반환한다.
    - 저장 경로와 저장할 필드 이름을 지정한다.
    - 저장 후 라우터의 callback 에서 request 로 정보를 받을 수 있다.
+
+1. eslint
+   - 지금 당장 설치 이유가 없기에 현 시점에서는 패스

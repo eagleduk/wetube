@@ -8,3 +8,6 @@ block content
         h3.video__title= video.title
         span.video__views= video.views 
         p.video__description= video.description
+    .video__comments
+        span= video.comments.length 
+        |  #{video.comments.length===1 ? "comment" : "comments"}

@@ -4,5 +4,7 @@ include mixins/videoBlock
 block content
     .search__header
         h3 Searching for: #{searchingBy}
+        if videos.length === 0
+            h4 No found Videos.
         each video in videos
             +videoBlock(video)
