@@ -162,6 +162,13 @@ Cloning Youtube with Vanilla and NodeJS
    - dotenv import 이 후, dotenv.config() 로 .env 파일을 읽고 process.env.[변수명] 으로 호출가능하다.
 
 1. async ~ await
+
    - 시간이 걸리는 함수에 대하여, 종료가 될때까지 기다리는 의미.
    - await 함수의 종료만 기다리는 것이므로, 에러가 발생하면 해당 함수 전체가 에러발생.
    - try ~ catch 생활화 필요
+
+1. multer
+   - file 을 upload 할때 사용된다.
+   - 미들웨어에서 파일을 체크하고 저장하고 정보를 반환한다.
+   - 저장 경로와 저장할 필드 이름을 지정한다.
+   - 저장 후 라우터의 callback 에서 request 로 정보를 받을 수 있다.
