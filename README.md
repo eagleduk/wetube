@@ -147,6 +147,14 @@ Cloning Youtube with Vanilla and NodeJS
    - nodeJS 에서 사용하려면 mongoose 설치 필요
    - .msi 파일로 설치, 환경변수 설정
 
+   1. schema
+      - 해당 DB 의 칼럼을 정의 하는 것
+      - firebase 의 필드와 비슷한 의미인듯
+   1. model
+      - 정의한 schema 형태의 DB
+      - 이름과 schema 값으로 model 을 만든다.
+      - firebase 의 컬렉션이랑 비슷한 의미인듯
+
 1. dotenv
    - 소스코드 공유시, 공유하기에 위험한 항목(URL, PORT, Application Key 등을 관리)
    - dotenv import 이 후, dotenv.config() 로 .env 파일을 읽고 process.env.[변수명] 으로 호출가능하다.
