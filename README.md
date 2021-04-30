@@ -150,6 +150,7 @@ Cloning Youtube with Vanilla and NodeJS
    1. schema
       - 해당 DB 의 칼럼을 정의 하는 것
       - firebase 의 필드와 비슷한 의미인듯
+      - 타 모델의 id 를 참조할 수 있다.
    1. model
       - 정의한 schema 형태의 DB
       - 이름과 schema 값으로 model 을 만든다.
