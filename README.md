@@ -95,6 +95,7 @@ Cloning Youtube with Vanilla and NodeJS
    - 제공하는 웹의 router 주소 매핑이 파일 하나에 모두 적혀있으면 구별하기가 어렵다.
    - 따라서 es6 의 import / export 를 사용하여 router, application, server 모듈을 나누어 관리한다.
    - url 의 대메뉴 별로 파일을 관리하는게 효과적.
+   - 라우터에서 /:[변수명] 형식으로 되어 있는 주소는 주소값이 정해져 있지 않은걸 의미한다. 모든값이 주소로 입력 될 수가 있다. 하지만 controller 에서 [변수명] 으로 된 파라메터를 받을 수 있다. express 에서는 중요한 패턴.
 
 1. MVC Pattern
 
