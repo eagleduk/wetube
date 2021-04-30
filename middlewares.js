@@ -11,5 +11,5 @@ export const localMiddleware = (req, res, next) => {
   next();
 };
 
-const multerVideo = multer({ dest: "videos/" });
+const multerVideo = multer({ dest: "uploads/videos/" });
 export const uploadVideo = multerVideo.single("videoFile");

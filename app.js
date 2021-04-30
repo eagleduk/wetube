@@ -25,6 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(localMiddleware);
+app.use("/uploads", express.static("uploads"));
 
 app.use(function (req, res, next) {
   res.setHeader(

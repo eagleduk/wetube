@@ -86,6 +86,10 @@ Cloning Youtube with Vanilla and NodeJS
       - form data 를 받기위한 package
       - data 를 받기 위한 format 을 설정할 수있다.(json, text, raw, urlencoded)
 
+   1. 정적파일
+      - express 에서 사용하는 정적 파일의 경로를 설정한다.
+      - 해당 URL 로 요청이 오면, 설정한 폴더로 연결한다.
+
 1. Express Core: Routing
 
    - 제공하는 웹의 router 주소 매핑이 파일 하나에 모두 적혀있으면 구별하기가 어렵다.
