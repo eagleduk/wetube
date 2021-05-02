@@ -180,4 +180,8 @@ Cloning Youtube with Vanilla and NodeJS
    - 저장 후 라우터의 callback 에서 request 로 정보를 받을 수 있다.
 
 1. eslint
+
    - 지금 당장 설치 이유가 없기에 현 시점에서는 패스
+
+1. webpack
+   - webpack, webpack-cli 설치
