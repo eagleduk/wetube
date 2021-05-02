@@ -1,5 +1,6 @@
 const path = require("path");
-const ExtractCSS = require("extract-text-webpack-plugin");
+const autoprefixer = require("autoprefixer");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const ENTRY_FILE = path.resolve(__dirname, "assets", "js", "main.js");
 const OUTPUT_DIR = path.join(__dirname, "static");
@@ -13,24 +14,39 @@ const config = {
     rules: [
       {
         test: /\.(scss)$/,
-        use: ExtractCSS.extract([
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
           {
             loader: "css-loader",
           },
           {
             loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  ["autoprefixer", { overrideBrowserslist: ["cover 99.5%"] }],
+                ],
+              },
+            },
           },
           {
             loader: "sass-loader",
           },
-        ]),
+        ],
       },
     ],
   },
   output: {
     path: OUTPUT_DIR,
-    filename: "[name].[format]",
+    filename: "[name].js",
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+    }),
+  ],
 };
 
 module.exports = config;

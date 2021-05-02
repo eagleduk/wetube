@@ -185,3 +185,12 @@ Cloning Youtube with Vanilla and NodeJS
 
 1. webpack
    - webpack, webpack-cli 설치
+   - webpack config
+     - module 의 rules 항목은 마지막 선언부터 처음 선언 순으로 rule 이 실행된다.
+     - Extract-text-webpack-plugin
+       - webpack4 버전 이상에서는 mini-css-extract-plugin 으로 변경
+     - css-loader
+       - 권한 문제로 인한 관리자 권한으로 설치
+     - postcss-loader
+       - autoprefixer 옵션이 문법이 변경.
+     - sass-loader
