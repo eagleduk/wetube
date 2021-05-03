@@ -238,3 +238,6 @@ Cloning Youtube with Vanilla and NodeJS
       - 저장되는 session 정보를 DB 에 저장시키고, 비교한다?
       - 서버가 재시작 되도 기존의 session 을 사용할 수 있도록 한다.
    1. passport-github
+      - github - Settings - Developer settings - OAuth Apps 추가
+      - 접속하는 HomepageURL, CallbackURL 작성
+      - github 인증 성공 후, 보내주는 profile 로 User 생성 또는 기존 User 업데이트
