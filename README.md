@@ -184,6 +184,7 @@ Cloning Youtube with Vanilla and NodeJS
    - 지금 당장 설치 이유가 없기에 현 시점에서는 패스
 
 1. webpack
+
    - webpack, webpack-cli 설치
    - webpack config
      1. entry
@@ -206,3 +207,11 @@ Cloning Youtube with Vanilla and NodeJS
              - 또는 config 에 resolve 항목을 추가 하여 해결.. 아직 맞는 방법인지는 모르겠다. 현재 적용되어 있는 방법
      1. output
      1. plugin
+
+1. Cookie
+   1. passport
+      - 사용자 인증 관련 로직을 수행해준다.
+   1. passport-local
+      - id/password 로 사용자 인증을 처리해주는 package
+   1. passport-local-mongoose
+      - id/password 로 passport 사용자 인증과 mongoose 를 연결해주는 mongoose plugin
