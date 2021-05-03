@@ -4,6 +4,8 @@ import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import session from "express-session";
+import MongoStore from "connect-mongo";
+import mongoose from "mongoose";
 
 /* Middleware */
 import { localMiddleware } from "./middlewares";
@@ -44,6 +46,9 @@ app.use(
     secret: process.env.COOKIE_SECRET,
     resave: true,
     saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGO_URL,
+    }),
   })
 );
 

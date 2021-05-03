@@ -234,3 +234,6 @@ Cloning Youtube with Vanilla and NodeJS
          - 데이터 모델 객체에 패스워드를 부여하면서 데이터를 생성한다.
    1. express-session
       - 데이터 인증 정보를 session 에 저장한다.
+   1. connect-mongo
+      - 저장되는 session 정보를 DB 에 저장시키고, 비교한다?
+      - 서버가 재시작 되도 기존의 session 을 사용할 수 있도록 한다.
