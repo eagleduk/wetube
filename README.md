@@ -209,9 +209,23 @@ Cloning Youtube with Vanilla and NodeJS
      1. plugin
 
 1. Cookie
+   - 사용자에 관련한 정보를 저장
    1. passport
       - 사용자 인증 관련 로직을 수행해준다.
+      1. serializeUser
+         - cookie 에 담을 정보를 결정한다.
+      1. deserializeUser
+         - cookie 에 담을 정보로 해당하는 데이터를 추출하는 로직을 결정한다.
    1. passport-local
       - id/password 로 사용자 인증을 처리해주는 package
    1. passport-local-mongoose
       - id/password 로 passport 사용자 인증과 mongoose 를 연결해주는 mongoose plugin
+      - passport 에서 설정해야 하는 부분들을 간단하게 수행해주는 method 를 제공한다.
+      1. createStrategy
+         - 사용자 인증에 대한 로직을 수행 해준다.
+      1. serializeUser
+         - cookie 에 담을 사용자 정보를 결정해준다.
+      1. deserializeUser
+         - cookie 에 담긴 정보로 해당하는 데이터를 추출해준다.
+      1. register
+         - 데이터 모델 객체에 패스워드를 부여하면서 데이터를 생성한다.
