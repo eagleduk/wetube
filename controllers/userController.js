@@ -70,8 +70,18 @@ export const logout = (req, res) => {
   res.redirect(routes.home);
 };
 
-export const userDetail = (req, res) =>
+export const getProfile = (req, res) => {
+  console.log("getProfile");
+  res.render("userDetail", { pageTitle: "User Detail", user: req.user });
+};
+
+export const userDetail = (req, res) => {
+  const {
+    params: { id },
+  } = req;
+  console.log("userDetail.... " + id);
   res.render("userDetail", { pageTitle: "User Detail" });
+};
 
 export const editProfile = (req, res) =>
   res.render("editProfile", { pageTitle: "Edit Profile" });

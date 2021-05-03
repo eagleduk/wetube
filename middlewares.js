@@ -4,7 +4,7 @@ import multer from "multer";
 export const localMiddleware = (req, res, next) => {
   res.locals.siteName = "WeTube";
   res.locals.routes = routes;
-  res.locals.user = req.user || false;
+  res.locals.loggedUser = req.user || false;
   next();
 };
 

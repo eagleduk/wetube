@@ -241,3 +241,9 @@ Cloning Youtube with Vanilla and NodeJS
       - github - Settings - Developer settings - OAuth Apps 추가
       - 접속하는 HomepageURL, CallbackURL 작성
       - github 인증 성공 후, 보내주는 profile 로 User 생성 또는 기존 User 업데이트
+      1. github website(auth) => passport.authenticate("github")
+      1. github website(auth) callback => GitHubStrategy - callbackURL
+      1. callback => githubLoginCallback(_,_,profile,cb)
+      1. find(Create) Or Error
+         1. find(User Update(githubId, avatar)) / create(User Create) => return cb(null, user) => makeCookie => saveCookie => sendCookie
+         1. Error => return cb(error) => passport failureRedirect
