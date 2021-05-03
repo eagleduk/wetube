@@ -4,10 +4,8 @@ import multer from "multer";
 export const localMiddleware = (req, res, next) => {
   res.locals.siteName = "WeTube";
   res.locals.routes = routes;
-  res.locals.user = {
-    isAuthenticated: req.user || false,
-    id: 1,
-  };
+  res.locals.user = req.user || false;
+  console.log(req.user);
   next();
 };
 

@@ -208,10 +208,11 @@ Cloning Youtube with Vanilla and NodeJS
      1. output
      1. plugin
 
-1. Cookie
+1. 사용자 인증, 저장 (cookie)
    - 사용자에 관련한 정보를 저장
    1. passport
       - 사용자 인증 관련 로직을 수행해준다.
+      - session 에 있는 데이터를 cookie 에 저장한다.
       1. serializeUser
          - cookie 에 담을 정보를 결정한다.
       1. deserializeUser
@@ -231,3 +232,5 @@ Cloning Youtube with Vanilla and NodeJS
          - cookie 에 담긴 정보로 해당하는 데이터를 추출해준다.
       1. register
          - 데이터 모델 객체에 패스워드를 부여하면서 데이터를 생성한다.
+   1. express-session
+      - 데이터 인증 정보를 session 에 저장한다.

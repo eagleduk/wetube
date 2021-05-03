@@ -3,6 +3,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
+import session from "express-session";
 
 /* Middleware */
 import { localMiddleware } from "./middlewares";
@@ -24,11 +25,9 @@ app.set("view engine", "pug");
 
 /* Middleware */
 app.use(helmet());
-app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
-app.use(localMiddleware);
 app.use("/uploads", express.static("uploads"));
 app.use("/static", express.static("static"));
 
@@ -40,8 +39,18 @@ app.use(function (req, res, next) {
   return next();
 });
 
+app.use(
+  session({
+    secret: process.env.COOKIE_SECRET,
+    resave: true,
+    saveUninitialized: false,
+  })
+);
+
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cookieParser());
+app.use(localMiddleware);
 
 /* Router */
 app.use(routes.home, globalRouter);
