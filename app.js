@@ -13,6 +13,10 @@ import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
 
+/* passport */
+import passport from "passport";
+import "./passport";
+
 const app = express();
 
 /* Express Template */
@@ -35,6 +39,9 @@ app.use(function (req, res, next) {
   );
   return next();
 });
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 /* Router */
 app.use(routes.home, globalRouter);

@@ -216,6 +216,8 @@ Cloning Youtube with Vanilla and NodeJS
          - cookie 에 담을 정보를 결정한다.
       1. deserializeUser
          - cookie 에 담을 정보로 해당하는 데이터를 추출하는 로직을 결정한다.
+      1. authenticate
+         - 인증 방식을 결정하고, 인증 성공 / 실패시 redirect 를 해준다.
    1. passport-local
       - id/password 로 사용자 인증을 처리해주는 package
    1. passport-local-mongoose
