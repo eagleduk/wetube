@@ -9,9 +9,18 @@ const mode = "production";
 
 const config = {
   mode: mode,
-  entry: ENTRY_FILE,
+  devtool: "source-map",
+  entry: ["@babel/polyfill", ENTRY_FILE],
   module: {
     rules: [
+      {
+        test: /\.(js)$/,
+        use: [
+          {
+            loader: "babel-loader",
+          },
+        ],
+      },
       {
         test: /\.(scss)$/,
         use: [
@@ -44,9 +53,14 @@ const config = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "style.css",
     }),
   ],
+  resolve: {
+    alias: {
+      process: "process/browser",
+    },
+  },
 };
 
 module.exports = config;

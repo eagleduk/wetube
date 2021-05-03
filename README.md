@@ -186,11 +186,23 @@ Cloning Youtube with Vanilla and NodeJS
 1. webpack
    - webpack, webpack-cli 설치
    - webpack config
-     - module 의 rules 항목은 마지막 선언부터 처음 선언 순으로 rule 이 실행된다.
-     - Extract-text-webpack-plugin
-       - webpack4 버전 이상에서는 mini-css-extract-plugin 으로 변경
-     - css-loader
-       - 권한 문제로 인한 관리자 권한으로 설치
-     - postcss-loader
-       - autoprefixer 옵션이 문법이 변경.
-     - sass-loader
+     1. entry
+     1. mode
+     1. module
+        - module 의 rules loader 항목은 마지막 선언부터 처음 선언 순으로 rule 이 실행된다.
+          1. Extract-text-webpack-plugin
+             - webpack4 버전 이상에서는 mini-css-extract-plugin 으로 변경
+          1. css-loader
+             - 권한 문제로 인한 관리자 권한으로 설치
+          1. postcss-loader
+             - autoprefixer 옵션이 문법이 변경.
+          1. sass-loader
+          1. babel-loader
+             - webpack 실행시 es6 를 예전 자바스크립트 문법으로 변경
+          1. @babel-polyfill
+             - webpack5 로 넘어오면서 문제 발생
+             - es6 의 async / await 문법을 변경해주는거 같은데.. config 에 추가하면 에러가 발생한다..
+             - async / await 가 있는 js 에 import "@babel/polyfill"; 를 추가하였다.. 아직 맞는 방법인지는 모르겠다.
+             - 또는 config 에 resolve 항목을 추가 하여 해결.. 아직 맞는 방법인지는 모르겠다. 현재 적용되어 있는 방법
+     1. output
+     1. plugin
