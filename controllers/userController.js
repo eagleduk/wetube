@@ -17,7 +17,6 @@ export const postJoin = async (req, res, next) => {
         email,
       });
       await User.register(user, password);
-      console.log("register 성공");
       next();
     } catch (error) {
       res.redirect(routes.home);
@@ -137,5 +136,21 @@ export const postEditProfile = async (req, res) => {
   }
 };
 
-export const changePassword = (req, res) =>
+export const getChangePassword = (req, res) =>
   res.render("changePassword", { pageTitle: "Change Password" });
+
+export const postChangePassword = async (req, res) => {
+  const {
+    body: { oldPassword, newPassword, newPassword2 },
+  } = req;
+  try {
+    if (newPassword === newPassword2) {
+      await req.user.changePassword(oldPassword, newPassword);
+      res.redirect(routes.users);
+    }
+    throw Error("Incorrect newPassword and Verify New Password.");
+  } catch (error) {
+    res.status(400);
+    res.redirect(`${routes.users + routes.changePassword}`);
+  }
+};

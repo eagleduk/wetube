@@ -209,7 +209,9 @@ Cloning Youtube with Vanilla and NodeJS
      1. plugin
 
 1. 사용자 인증, 저장 (cookie)
+
    - 사용자에 관련한 정보를 저장
+
    1. passport
       - 사용자 인증 관련 로직을 수행해준다.
       - session 에 있는 데이터를 cookie 에 저장한다.
@@ -232,6 +234,8 @@ Cloning Youtube with Vanilla and NodeJS
          - cookie 에 담긴 정보로 해당하는 데이터를 추출해준다.
       1. register
          - 데이터 모델 객체에 패스워드를 부여하면서 데이터를 생성한다.
+      1. changePassword
+         - 변경전 비밀번호, 변경할 비밀번호를 인자로 하여 비교, 수정한다.
    1. express-session
       - 데이터 인증 정보를 session 에 저장한다.
    1. connect-mongo
@@ -254,3 +258,6 @@ Cloning Youtube with Vanilla and NodeJS
       - localtunnel 을 설치하면 임시로 https 로 변경하여 사용할 수 있다. 하지만 시작할때마다 도메인이 변경된다..
       - profile 에서 받고 싶은 데이터를 요청할 수 있고, 그 요청에 대한 권한을 facebook 앱에서 설정해야 한다.
       - 로직만 구현..
+
+1. 사용자 정보 수정
+   - passport-local-mongoose 를 이용하여 손쉽게 유저 model 을 가져올수 있다.
