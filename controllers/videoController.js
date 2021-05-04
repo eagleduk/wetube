@@ -42,7 +42,7 @@ export const postUpload = async (req, res) => {
       description,
       creator: req.user.id,
     });
-    req.user.videos.push(newVideo.id);
+    req.user.Videos.push(newVideo.id);
     await req.user.save();
     res.redirect(routes.videoDetail(newVideo.id));
   } catch (error) {
@@ -70,6 +70,7 @@ export const getEditVideo = async (req, res) => {
   } = req;
   try {
     const video = await Video.findById(id);
+    if (req.user.id !== video.creator) throw Error("Not Uploader");
     res.render("editVideo", { pageTitle: `Edit ${video.title}`, video });
   } catch (error) {
     res.redirect(routes.home);
@@ -96,6 +97,8 @@ export const deleteVideo = async (req, res) => {
   } = req;
   console.log(id);
   try {
+    const video = await Video.findById(id);
+    if (req.user.id !== video.creator) throw Error("Not Uploader");
     await Video.findOneAndRemove({ _id: id });
     //await Video.findByIdAndDelete(id);
   } catch (error) {

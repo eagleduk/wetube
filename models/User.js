@@ -7,13 +7,13 @@ const UserSchema = new mongoose.Schema({
   avatarUrl: String,
   facebookId: Number,
   githubId: Number,
-  videos: [
+  Videos: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Video",
     },
   ],
-  comments: [
+  Comments: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Comment",
