@@ -249,3 +249,8 @@ Cloning Youtube with Vanilla and NodeJS
          1. Error => return cb(error) => passport failureRedirect
    1. passport-facebook
       - github 와 로직은 동일하지만, 보내주는 profile 에 이메일과 아바타 주소는 없다.
+      - facebook 에 인증 요청을 하려면 https 로 요청을 해야한다.
+      - 생각보다 보안관련해서 많이 복잡.. 해서 일단은 패스
+      - localtunnel 을 설치하면 임시로 https 로 변경하여 사용할 수 있다. 하지만 시작할때마다 도메인이 변경된다..
+      - profile 에서 받고 싶은 데이터를 요청할 수 있고, 그 요청에 대한 권한을 facebook 앱에서 설정해야 한다.
+      - 로직만 구현..

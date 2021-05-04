@@ -67,12 +67,31 @@ export const successGithubLogin = (req, res) => {
 
 export const facebookLogin = passport.authenticate("facebook");
 
-export const facebookLoginCallback = (
-  accessToken,
-  refreshToken,
-  profile,
-  cb
-) => {};
+export const facebookLoginCallback = async (_, __, profile, cb) => {
+  const {
+    _json: { id: facebookId, name, email },
+  } = profile;
+  const avatarUrl = `https://graph.facebook.com/${id}/picture?type=large`;
+  try {
+    const user = await User.findOne({ email });
+    if (user) {
+      user.facebookId = facebookId;
+      user.avatarUrl = avatarUrl;
+      user.save();
+      return cb(null, user);
+    }
+    const newUser = await User.create({
+      email,
+      name,
+      facebookId,
+      avatarUrl,
+    });
+    return cb(null, newUser);
+  } catch (error) {
+    return cb(error);
+  }
+};
+
 export const successFacebookLogin = (req, res) => {
   res.redirect(routes.home);
 };
