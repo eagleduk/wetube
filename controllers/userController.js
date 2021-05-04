@@ -20,7 +20,6 @@ export const postJoin = async (req, res, next) => {
       console.log("register 성공");
       next();
     } catch (error) {
-      console.log(error);
       res.redirect(routes.home);
     }
   }
@@ -102,7 +101,6 @@ export const logout = (req, res) => {
 };
 
 export const getProfile = (req, res) => {
-  console.log("getProfile");
   res.render("userDetail", { pageTitle: "User Detail", user: req.user });
 };
 
@@ -119,8 +117,25 @@ export const userDetail = async (req, res) => {
   }
 };
 
-export const editProfile = (req, res) =>
+export const getEditProfile = (req, res) =>
   res.render("editProfile", { pageTitle: "Edit Profile" });
+
+export const postEditProfile = async (req, res) => {
+  const {
+    body: { name, email },
+    file,
+  } = req;
+  try {
+    await User.findByIdAndUpdate(req.user.id, {
+      name,
+      email,
+      avatarUrl: file?.path || req.user.avatarUrl,
+    });
+    res.redirect(routes.users);
+  } catch (error) {
+    res.redirect(`${routes.users + routes.editProfile}`);
+  }
+};
 
 export const changePassword = (req, res) =>
   res.render("changePassword", { pageTitle: "Change Password" });

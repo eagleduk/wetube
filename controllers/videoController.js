@@ -44,7 +44,6 @@ export const postUpload = async (req, res) => {
     res.redirect(routes.videoDetail(newVideo.id));
   } catch (error) {
     // 파일 삭제??
-    console.log(error);
     res.redirect(`/videos${routes.upload}`);
   }
 };

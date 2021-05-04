@@ -26,3 +26,6 @@ export const onlyPrivate = (req, res, next) => {
 
 const multerVideo = multer({ dest: "uploads/videos/" });
 export const uploadVideo = multerVideo.single("videoFile");
+
+const multerAvatar = multer({ dest: "uploads/avatar" });
+export const uploadAvatar = multerAvatar.single("avatar");
