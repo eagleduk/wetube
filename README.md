@@ -247,3 +247,5 @@ Cloning Youtube with Vanilla and NodeJS
       1. find(Create) Or Error
          1. find(User Update(githubId, avatar)) / create(User Create) => return cb(null, user) => makeCookie => saveCookie => sendCookie
          1. Error => return cb(error) => passport failureRedirect
+   1. passport-facebook
+      - github 와 로직은 동일하지만, 보내주는 profile 에 이메일과 아바타 주소는 없다.

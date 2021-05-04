@@ -1,12 +1,14 @@
 import express from "express";
 import passport from "passport";
 import {
+  facebookLogin,
   getJoin,
   getLogin,
   githubLogin,
   logout,
   postJoin,
   postLogin,
+  successFacebookLogin,
   successGithubLogin,
 } from "../controllers/userController";
 import { home, search } from "../controllers/videoController";
@@ -32,6 +34,14 @@ globalRouter.get(
   routes.githubCallback,
   passport.authenticate("github", { failureRedirect: routes.login }),
   successGithubLogin
+);
+
+// facebook
+globalRouter.get(routes.facebook, onlyPublic, facebookLogin);
+globalRouter.get(
+  routes.facebookCallback,
+  passport.authenticate("facebook", { failureRedirect: routes.login }),
+  successFacebookLogin
 );
 
 export default globalRouter;
