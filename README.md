@@ -153,13 +153,22 @@ Cloning Youtube with Vanilla and NodeJS
    - .msi 파일로 설치, 환경변수 설정
 
    1. schema
+
       - 해당 DB 의 칼럼을 정의 하는 것
       - firebase 의 필드와 비슷한 의미인듯
       - 타 모델의 id 를 참조할 수 있다.
+
    1. model
+
       - 정의한 schema 형태의 DB
       - 이름과 schema 값으로 model 을 만든다.
       - firebase 의 컬렉션이랑 비슷한 의미인듯
+
+   1. mongoose
+
+      - mongoDB 의 데이터 관리 package
+      - mongoDB 의 query 명령어를 method 로 제공
+      - reference 가 있는 ObjectId 형태의 schema 를 통해 관련 model 에서 데이터를 바로 가져올 수 있다.(Populate)
 
 1. dotenv
 
