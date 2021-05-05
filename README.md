@@ -269,4 +269,7 @@ Cloning Youtube with Vanilla and NodeJS
       - 로직만 구현..
 
 1. 사용자 정보 수정
+
    - passport-local-mongoose 를 이용하여 손쉽게 유저 model 을 가져올수 있다.
+
+1. custom video player
