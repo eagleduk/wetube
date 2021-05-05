@@ -4,8 +4,10 @@ const playBtn =
   videoContainer && videoContainer.querySelector("#wetube-player__playBtn");
 const volumeBtn =
   videoContainer && videoContainer.querySelector("#wetube-player__volumeBtn");
+const screenBtn =
+  videoContainer && videoContainer.querySelector("#wetube-player__screenBtn");
 
-function handleVideoPlay() {
+function handleVideoPlay(event) {
   if (videoPlayer.paused) {
     videoPlayer.play();
     playBtn.innerHTML = `<i class="fas fa-pause"></i>`;
@@ -25,9 +27,22 @@ function handleVideoVolume() {
   }
 }
 
+function compressFullScreen(event) {
+  document.exitFullscreen();
+  screenBtn.innerHTML = `<i class="fas fa-expand"></i>`;
+  screenBtn.addEventListener("click", expandFullScreen, { once: true });
+}
+
+function expandFullScreen(event) {
+  videoContainer.requestFullscreen();
+  screenBtn.innerHTML = `<i class="fas fa-compress"></i>`;
+  screenBtn.addEventListener("click", compressFullScreen, { once: true });
+}
+
 function init() {
   playBtn.addEventListener("click", handleVideoPlay);
   volumeBtn.addEventListener("click", handleVideoVolume);
+  screenBtn.addEventListener("click", expandFullScreen, { once: true });
 }
 
 videoContainer && init();
