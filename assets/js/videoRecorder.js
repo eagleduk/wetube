@@ -27,7 +27,6 @@ const handlerRecorder = async (event) => {
       const mediaRecoder = new MediaRecorder(stream);
       mediaRecoder.start();
       mediaRecoder.addEventListener("dataavailable", handleMediaAvailable);
-      console.log(stream);
       recorderBtn.addEventListener(
         "click",
         (event) => {
