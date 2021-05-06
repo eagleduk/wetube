@@ -9,6 +9,7 @@ mixin videoPlayer(video = {})
                     span#wetube-player__currentTime 00:00:00
                     |/ 
                     span#wetube-player__fullTime 00:00:00
+                input.videoPlayer__volume#wetube-player__volume(type="range", min="0" max="1" value="0.5" step="0.1")
             .videoPlayer__column
                 span#wetube-player__playBtn
                     i.fas.fa-play

@@ -10,6 +10,8 @@ const currentTime =
   videoContainer && videoContainer.querySelector("#wetube-player__currentTime");
 const fullTime =
   videoContainer && videoContainer.querySelector("#wetube-player__fullTime");
+const volumeRange =
+  videoContainer && videoContainer.querySelector("#wetube-player__volume");
 
 function handleVideoPlay(event) {
   if (videoPlayer.paused) {
@@ -21,13 +23,15 @@ function handleVideoPlay(event) {
   }
 }
 
-function handleVideoVolume(event) {
+function handleVideoMute(event) {
   if (videoPlayer.muted) {
     videoPlayer.muted = false;
     volumeBtn.innerHTML = `<i class="fas fa-volume-up"></i>`;
+    volumeRange.value = videoPlayer.volume;
   } else {
     videoPlayer.muted = true;
     volumeBtn.innerHTML = `<i class="fas fa-volume-mute"></i>`;
+    volumeRange.value = 0;
   }
 }
 
@@ -78,6 +82,7 @@ const formatDate = (seconds) => {
 };
 
 function getFullTime(event) {
+  videoPlayer.volume = volumeRange.value;
   fullTime.innerHTML = formatDate(videoPlayer.duration);
 }
 
@@ -89,13 +94,30 @@ function handleVideoEnd(event) {
   playBtn.innerHTML = `<i class="fas fa-play"></i>`;
 }
 
+function handleVideoVolume(event) {
+  const {
+    target: { value },
+  } = event;
+  videoPlayer.volume = value;
+  if (value > 0.7) {
+    volumeBtn.innerHTML = `<i class="fas fa-volume-up"></i>`;
+  } else if (value > 0.4) {
+    volumeBtn.innerHTML = `<i class="fas fa-volume-down"></i>`;
+  } else if (value > 0.1) {
+    volumeBtn.innerHTML = `<i class="fas fa-volume-off"></i>`;
+  } else {
+    volumeBtn.innerHTML = `<i class="fas fa-volume-mute"></i>`;
+  }
+}
+
 function init() {
   playBtn.addEventListener("click", handleVideoPlay);
-  volumeBtn.addEventListener("click", handleVideoVolume);
+  volumeBtn.addEventListener("click", handleVideoMute);
   screenBtn.addEventListener("click", expandFullScreen, { once: true });
   videoPlayer.addEventListener("loadedmetadata", getFullTime);
   videoPlayer.addEventListener("timeupdate", getCurrentTime);
   videoPlayer.addEventListener("ended", handleVideoEnd);
+  volumeRange.addEventListener("input", handleVideoVolume);
 }
 
 videoContainer && init();
