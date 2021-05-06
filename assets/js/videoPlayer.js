@@ -85,12 +85,17 @@ function getCurrentTime(event) {
   currentTime.innerHTML = formatDate(videoPlayer.currentTime);
 }
 
+function handleVideoEnd(event) {
+  playBtn.innerHTML = `<i class="fas fa-play"></i>`;
+}
+
 function init() {
   playBtn.addEventListener("click", handleVideoPlay);
   volumeBtn.addEventListener("click", handleVideoVolume);
   screenBtn.addEventListener("click", expandFullScreen, { once: true });
   videoPlayer.addEventListener("loadedmetadata", getFullTime);
   videoPlayer.addEventListener("timeupdate", getCurrentTime);
+  videoPlayer.addEventListener("ended", handleVideoEnd);
 }
 
 videoContainer && init();
