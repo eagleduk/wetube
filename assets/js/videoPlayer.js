@@ -91,6 +91,7 @@ function getCurrentTime(event) {
 }
 
 function handleVideoEnd(event) {
+  registerView();
   playBtn.innerHTML = `<i class="fas fa-play"></i>`;
 }
 
@@ -109,6 +110,13 @@ function handleVideoVolume(event) {
     volumeBtn.innerHTML = `<i class="fas fa-volume-mute"></i>`;
   }
 }
+
+const registerView = () => {
+  const videoId = window.location.href.split("/videos")[1];
+  fetch(`/api/${videoId}/view`, {
+    method: "POST",
+  });
+};
 
 function init() {
   playBtn.addEventListener("click", handleVideoPlay);

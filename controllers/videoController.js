@@ -106,7 +106,7 @@ export const deleteVideo = async (req, res) => {
   res.redirect(routes.home);
 };
 
-export const getRegisterView = async (req, res) => {
+export const postRegisterView = async (req, res) => {
   const {
     params: { id },
   } = req;
