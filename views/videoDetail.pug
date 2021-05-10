@@ -21,13 +21,13 @@ block content
                 | Uploaded by  
                 a(href=routes.userDetail(video.creator.id))=video.creator.name
         .video__comments
-            span= video.comments.length 
+            span#jsCommentNumber= video.comments.length 
             |  #{video.comments.length===1 ? "comment" : "comments"}
 
             form.add__comment#jsAddComment
                 input(type="text", placeholder="Add a comment")
 
                 ul.video__comments-list
-                    each comment in video.comments
+                    each comment in video.comments.reverse()
                         li
                             span #{comment.text}
