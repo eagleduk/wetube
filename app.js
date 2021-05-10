@@ -19,6 +19,7 @@ import globalRouter from "./routers/globalRouter";
 /* passport */
 import passport from "passport";
 import "./passport";
+import apiRouter from "./routers/apiRouter";
 
 const app = express();
 
@@ -61,5 +62,6 @@ app.use(localMiddleware);
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);
+app.use(routes.api, apiRouter);
 
 export default app;

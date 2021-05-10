@@ -275,6 +275,9 @@ Cloning Youtube with Vanilla and NodeJS
 1. custom video player
 
 1. Navigator
+
    - Javascript Navigator 객체
    - 사용자 에이전트의 상태와 신원 정보를 나타내며, 스크립트로 해당 정보를 질의할 때와 애플리케이션을 특정 활동에 등록할 때 사용.
    - 현재 위치 및 웹카메라 등 사용 권한 요청이 가능하다.
+
+1. api / ajax
