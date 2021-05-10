@@ -281,3 +281,10 @@ Cloning Youtube with Vanilla and NodeJS
    - 현재 위치 및 웹카메라 등 사용 권한 요청이 가능하다.
 
 1. api / ajax
+   - XMLHttpRequest => jquery.load() => fetch => axios 순으로 넘어가고 있다.
+   1. XMLHttpRequest
+      - 초기 Ajax 를 사용할 때 사용.
+      - es 에서 promise 가 도입되면서 Promise 기반인 fetch 로 대체가 되었다.
+   1. fetch
+      - Promise 기반의 API
+   1. Axios

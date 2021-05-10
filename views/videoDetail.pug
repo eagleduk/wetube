@@ -23,3 +23,11 @@ block content
         .video__comments
             span= video.comments.length 
             |  #{video.comments.length===1 ? "comment" : "comments"}
+
+        form.add__comment#jsAddComment
+            input(type="text", placeholder="Add a comment")
+
+            ul.video__comments-list
+                each comment in video.comments
+                    li
+                        span comment.text
