@@ -1,6 +1,3 @@
-if message.info
-    span= message.info
-else if message.success
-    span= message.success
-else if message.error
-    span= message.error
+mixin message(message = {})
+    .flash-message__container(class=message.type)
+        span.flash-message__text= message.text
