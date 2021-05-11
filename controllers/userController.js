@@ -8,6 +8,7 @@ export const postJoin = async (req, res, next) => {
     body: { name, email, password, password2 },
   } = req;
   if (password !== password2) {
+    req.flash("error", "Incorrect Passwords");
     res.status(400);
     res.render("join", { pageTitle: "Join" });
   } else {
@@ -30,9 +31,14 @@ export const getLogin = (req, res) =>
 export const postLogin = passport.authenticate("local", {
   successRedirect: routes.home,
   failureRedirect: routes.login,
+  successFlash: "Welcome",
+  failureFlash: "Log in failed",
 });
 
-export const githubLogin = passport.authenticate("github");
+export const githubLogin = passport.authenticate("github", {
+  successFlash: "Welcome",
+  failureFlash: "Log in failed",
+});
 
 export const githubLoginCallback = async (_, __, profile, cb) => {
   const {
@@ -60,6 +66,7 @@ export const githubLoginCallback = async (_, __, profile, cb) => {
 };
 
 export const successGithubLogin = (req, res) => {
+  req.flash("success", "Welcom from GitHub");
   res.redirect(routes.home);
 };
 
@@ -95,6 +102,7 @@ export const successFacebookLogin = (req, res) => {
 };
 
 export const logout = (req, res) => {
+  req.flash("info", "Good Bye, bro");
   req.logout();
   res.redirect(routes.home);
 };
@@ -113,6 +121,7 @@ export const userDetail = async (req, res) => {
     res.render("userDetail", { pageTitle: "User Detail", user });
   } catch (error) {
     console.log(error);
+    req.flash("error", "User is not found");
     res.redirect(routes.home);
   }
 };
@@ -131,8 +140,10 @@ export const postEditProfile = async (req, res) => {
       email,
       avatarUrl: file?.path || req.user.avatarUrl,
     });
+    req.flash("success", "User Profile has Updated");
     res.redirect(routes.users);
   } catch (error) {
+    req.flash("error", "User Profile Updated Error");
     res.redirect(`${routes.users + routes.editProfile}`);
   }
 };
@@ -151,6 +162,7 @@ export const postChangePassword = async (req, res) => {
     }
     throw Error("Incorrect newPassword and Verify New Password.");
   } catch (error) {
+    req.flash("error", "Can't Change Password");
     res.status(400);
     res.redirect(`${routes.users + routes.changePassword}`);
   }

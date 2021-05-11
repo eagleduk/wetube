@@ -21,6 +21,9 @@ import passport from "passport";
 import "./passport";
 import apiRouter from "./routers/apiRouter";
 
+/* Message Flash */
+import flash from "express-flash";
+
 const app = express();
 
 /* Express Template */
@@ -53,6 +56,7 @@ app.use(
   })
 );
 
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(cookieParser());
