@@ -143,6 +143,26 @@ export const postAddComment = async (req, res) => {
 
     user.Comments.push(newComment.id);
     user.save();
+
+    res.json({
+      id: newComment.id,
+      text,
+    });
+    res.status(200);
+  } catch (error) {
+    res.status(400);
+  } finally {
+    res.end();
+  }
+};
+
+export const postDeleteComment = async (req, res) => {
+  const {
+    params: { id },
+  } = req;
+  try {
+    const comment = await Comment.findByIdAndDelete(id);
+    res.status(200);
   } catch (error) {
     res.status(400);
   } finally {

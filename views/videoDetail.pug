@@ -27,7 +27,10 @@ block content
             form.add__comment#jsAddComment
                 input(type="text", placeholder="Add a comment")
 
-                ul.video__comments-list
-                    each comment in video.comments.reverse()
-                        li
-                            span #{comment.text}
+            ul.video__comments-list#jsCommentList
+                each comment in video.comments.reverse()
+                    li
+                        span(id=comment.creator, name=loggedUser.id) #{comment.text} 
+
+                        if comment.creator.toString() === loggedUser.id.toString()
+                            button(name=comment.id)= "❌"

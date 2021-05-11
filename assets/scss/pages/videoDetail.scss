@@ -46,13 +46,21 @@
       }
     }
     .video__comments-list {
-      margin-top: 50px;
       li {
-        background-color: #3498db;
-        color: white;
-        padding: 15px;
-        border-radius: 20px;
-        border-bottom-left-radius: 0px;
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        span {
+          background-color: #3498db;
+          color: white;
+          padding: 15px;
+          border-radius: 20px;
+          border-bottom-left-radius: 0px;
+        }
+        button {
+          width: 30px;
+          padding: 0;
+        }
         &:not(:last-child) {
           margin-bottom: 15px;
         }
